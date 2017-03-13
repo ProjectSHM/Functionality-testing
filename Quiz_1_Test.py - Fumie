@@ -6,26 +6,43 @@ answer_load()
 
 
 #the question sentense 1 is shown up
-print "The body ocscilates with a frequency of 2Hz. What is its maximum vlocity?"
+print "The body ocscilates with a frequency of 2Hz. What is its maximum vlocity (m/s) ?"
 
 # User enters the answer
 answer_1 = 0
-while answer_1 != "2.51Hz" :
+while answer_1 != 2.51 :
     answer_1 = raw_input("Enter your answer : ")
     answer_set("user_answer_1", answer_1)
     
 #the answer is checked
-    if answer_1 == "2.51Hz":
+    if answer_1 != float:
+        print "Invalid answer. please input number"
+        
+    if answer_1 == hint1:
+        hint_1 = "maximum velocity = A*omega^2, omega = 2*pi*f"
+        print hint_1
+            
+    if answer_1 == 2.51:
+        print "Your answer is", answer_1, "m/s" 
         print "Correct. Go to the next question"
     elif answer_1 == "hint1":
         hint_1 = "maximum velocity = A*omega^2, omega = 2*pi*f"
         print hint_1
-    
-    else:
+    elif answer_1 != 2.51:
         print "It's wrong answer. Try again."
-        print " If you want to check the hint, enter 'hint1' "
+        Hint_1 = raw_input(" Would you like the hint? y/n)")
+        if Hint_i == y:
+            hint_1 = "maximum velocity = A*omega^2, omega = 2*pi*f"
+            print hint_1
+        elif Hint_1 != n:
+            answer_1 = float(raw_input("Enter your answer : "))
+##    else:
+##         print "It's invalid. You need to put numerical value."
+    
+        
 # user's answer is saved to the dialog "answer.py"    
 answer_save()
 
 
 ##print answer_get("user_answer_1")
+
