@@ -1,0 +1,31 @@
+#Quiz 1
+#import answer.py
+from answer import *
+answer_init()
+answer_load()
+
+
+#the question sentense 1 is shown up
+print "The body ocscilates with a frequency of 2Hz. What is its maximum vlocity?"
+
+# User enters the answer
+answer_1 = 0
+while answer_1 != "2.51Hz" :
+    answer_1 = raw_input("Enter your answer : ")
+    answer_set("user_answer_1", answer_1)
+    
+#the answer is checked
+    if answer_1 == "2.51Hz":
+        print "Correct. Go to the next question"
+    elif answer_1 == "hint1":
+        hint_1 = "maximum velocity = A*omega^2, omega = 2*pi*f"
+        print hint_1
+    
+    else:
+        print "It's wrong answer. Try again."
+        print " If you want to check the hint, enter 'hint1' "
+# user's answer is saved to the dialog "answer.py"    
+answer_save()
+
+
+##print answer_get("user_answer_1")
